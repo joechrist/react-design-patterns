@@ -1,4 +1,4 @@
-# React: Design Patterns
+# Specifications for contribution
 
 <!--
 BEFORE POSTING YOUR ISSUE:
