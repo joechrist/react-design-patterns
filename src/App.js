@@ -1,31 +1,27 @@
-import NumberedList from './NumberedList';
-import LargePersonListItem from './people/LargePersonListItem';
-import SmallPersonListItem from './people/SmallPersonListItem';
+import Modal from './Modal';
 import LargeProductListItem from './products/LargeProductListItem';
-import SmallProductListItem from './products/SmallProductListItem';
-import RegularList from './RegularList';
 
 // People Data - In App() component only for this course explanation
-const people = [
-  {
-    name: 'John Doe',
-    age: 54,
-    hairColor: 'brown',
-    hobbies: ['swimming', 'bicycling', 'video games'],
-  },
-  {
-    name: 'Brenda Smith',
-    age: 33,
-    hairColor: 'black',
-    hobbies: ['golf', 'mathematics'],
-  },
-  {
-    name: 'Jane Garcia',
-    age: 27,
-    hairColor: 'blonde',
-    hobbies: ['biology', 'medicine', 'gymnastics'],
-  },
-];
+// const people = [
+//   {
+//     name: 'John Doe',
+//     age: 54,
+//     hairColor: 'brown',
+//     hobbies: ['swimming', 'bicycling', 'video games'],
+//   },
+//   {
+//     name: 'Brenda Smith',
+//     age: 33,
+//     hairColor: 'black',
+//     hobbies: ['golf', 'mathematics'],
+//   },
+//   {
+//     name: 'Jane Garcia',
+//     age: 27,
+//     hairColor: 'blonde',
+//     hobbies: ['biology', 'medicine', 'gymnastics'],
+//   },
+// ];
 
 // Products Data
 const products = [
@@ -53,26 +49,9 @@ const products = [
 function App() {
   return (
     <>
-      <RegularList
-        items={people}
-        resourceName="person"
-        itemComponent={SmallPersonListItem}
-      />
-      <NumberedList
-        items={people}
-        resourceName="person"
-        itemComponent={LargePersonListItem}
-      />
-      <RegularList
-        items={products}
-        resourceName="product"
-        itemComponent={SmallProductListItem}
-      />
-      <NumberedList
-        items={products}
-        resourceName="product"
-        itemComponent={LargeProductListItem}
-      />
+      <Modal>
+        <LargeProductListItem product={products[0]} />
+      </Modal>
     </>
   );
 }
