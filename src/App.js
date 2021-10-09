@@ -1,7 +1,7 @@
 import UserLoader from './UserLoader';
 import UserInfo from './UserInfo';
 
-// COMPONENT
+// COMPONENT -
 function App() {
   return (
     <>
