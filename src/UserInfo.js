@@ -1,6 +1,7 @@
 import React from 'react';
 
-// COMPONENT
+// COMPONENT - It's will be passe in the parent component (here App()) as a component
+// wrapped in this container like : <UserLoader><Userinfo/></UserLoader>
 const UserInfo = ({ user }) => {
   // user info destructurate
   const { name, age, hairColor, hobbies } = user || {};

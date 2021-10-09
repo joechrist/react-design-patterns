@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-// Component - CONTAINER that take care to load the data (Loading user by ID here!)
-// '{children}' : Grab data from the component we pass through
-const CurrentUserLoader = ({ children }) => {
-  //
+// COMPONENT- CONTAINER that take care to load the data (Loading user by ID here!)
+// userID : it's wil pass to the parent component (here App()) as a props
+// children will be passed in the parent component (here App()) as a component like this
+//
+const UserLoader = ({ userId, children }) => {
   const [user, setUser] = useState(null);
 
-  // Load the data from the server
   useEffect(() => {
     (async () => {
-      const response = await axios.get('/current-user');
+      const response = await axios.get(`/users/${userId}`);
       setUser(response.data);
     })();
-  }, []);
+  }, [userId]);
 
   return (
     <>
@@ -28,4 +28,4 @@ const CurrentUserLoader = ({ children }) => {
   );
 };
 
-export default CurrentUserLoader;
+export default UserLoader;
