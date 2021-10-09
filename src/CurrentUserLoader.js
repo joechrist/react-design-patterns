@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 // Component - CONTAINER that take care to load the data ( Here the current user data )
+// Load a singl User
 // '{children}' : Grab data from the component we pass through
 const CurrentUserLoader = ({ children }) => {
   //
