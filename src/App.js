@@ -1,17 +1,29 @@
 import UserInfo from './UserInfo';
-import ResourceLoader from './ResourceLoader';
+import DataSource from './DataSource';
 import ProductInfo from './ProductInfo';
+import axios from 'axios';
+
+// grab data from server with URL we passed in
+const getServerData = (url) => async () => {
+  const response = await axios.get(url);
+  return response.data;
+};
 
 // COMPONENT -
 function App() {
   return (
     <>
-      <ResourceLoader resourceUrl="/users/123" resourceName="user">
+      {/* user resource */}
+      <DataSource getDataFunc={getServerData('/users/123')} resourceName="user">
         <UserInfo />
-      </ResourceLoader>
-      <ResourceLoader resourceUrl="/products/1234" resourceName="product">
+      </DataSource>
+      {/* product resource */}
+      <DataSource
+        getDataFunc={getServerData('/products/1234')}
+        resourceName="product"
+      >
         <ProductInfo />
-      </ResourceLoader>
+      </DataSource>
     </>
   );
 }
